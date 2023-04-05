@@ -2,35 +2,35 @@ from datetime import datetime
 
 
 example_json = {
-	"id": "0001",
-	"type": "donut",
-	"updated": "Cake",
-	"ppu": 0.55,
-	"field": {
-			"updated": None,
-    },
-    "new_field" : 
-        {"some_field" : 
-    			{
-    			"updated" : "the most nested guy",
-                "inner_child": {
-						"updated": None,
-						"inner_child": {
-									"updated": None,
-                                    "inner_child": {
-												"updated": None,
-                                                "inner_child": {
-															"updated": None,
-												},
-									},
-						},
-				},
-				}
-        },
+   "id": "0001",
+   "type": "donut",
+   "updated": "Cake",
+   "ppu": 0.55,
+   "field": {
+      "updated": "None"
+   },
+   "new_field": {
+      "some_field": {
+         "updated": "the most nested guy",
+         "inner_child": {
+            "updated": "None",
+            "inner_child": {
+               "updated": "None",
+               "inner_child": {
+                  "updated": "None",
+                  "inner_child": {
+                     "updated": "None"
+                  }
+               }
+            }
+         }
+      }
+   }
 }
 
+
 def update_json(some_json):
-    for key, value in some_json.items():  
+    for key, value in some_json.items():
         if isinstance(value, dict):
             update_json(value)
         elif key == "updated":

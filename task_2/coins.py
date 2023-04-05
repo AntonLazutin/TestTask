@@ -10,7 +10,7 @@ class CoinsRiddle:
     def count_progression_sum(self) -> None:
         self.__prog_sum = self.coin_w*self.num_of_baskets*(self.num_of_baskets-1)/2-self.picked_w
 
-    def get_basket_number(self):
+    def get_basket_number(self) -> None:
         if (self.__prog_sum > 0):
             self.__number_of_false_basket = self.__prog_sum / self.false_w
         else:
